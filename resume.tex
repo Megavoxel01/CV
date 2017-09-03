@@ -1,118 +1,155 @@
-\documentclass[a4paper]{article}
-    \usepackage{fullpage}
-    \usepackage{amsmath}
-    \usepackage{amssymb}
-    \usepackage{textcomp}
-    \textheight=10in
-    \pagestyle{empty}
-    \raggedright
+%-------------------------
+% Resume in Latex
+% Author : Sourabh Bajaj
+% License : MIT
+%------------------------
 
-    %\renewcommand{\encodingdefault}{cg}
-%\renewcommand{\rmdefault}{lgrcmr}
+\documentclass[letterpaper,11pt]{article}
 
-\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
 
-% DEFINITIONS FOR RESUME %%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\area} [2] {
-    \vspace*{-9pt}
-    \begin{verse}
-        \textbf{#1}   #2
-    \end{verse}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+	\vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+	\item\small{
+		\textbf{#1}{: #2 \vspace{-2pt}}
+	}
 }
 
-\newcommand{\lineunder} {
-    \vspace*{-8pt} \\
-    \hspace*{-18pt} \hrulefill \\
+\newcommand{\resumeSubheading}[4]{
+	\vspace{-1pt}\item
+	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{\small#3} & \textit{\small #4} \\
+	\end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\header} [1] {
-    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
-    \vspace*{-6pt} \lineunder
-}
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
 
-\newcommand{\employer} [3] {
-    { \textbf{#1} (#2)\\ \underline{\textbf{\emph{#3}}}\\  }
-}
+\renewcommand{\labelitemii}{$\circ$}
 
-\newcommand{\contact} [3] {
-    \vspace*{-10pt}
-    \begin{center}
-        {\Huge \scshape {#1}}\\
-        #2 \\ #3
-    \end{center}
-    \vspace*{-8pt}
-}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+	\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+	\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
-\newenvironment{achievements}{
-    \begin{list}
-        {$\bullet$}{\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}
-    \end{list}
-}
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\schoolwithcourses} [4] {
-    \textbf{#1} #2 $\bullet$ #3\\
-    #4 \\
-    \vspace*{5pt}
-}
 
-\newcommand{\school} [4] {
-    \textbf{#1} #2 $\bullet$ #3\\
-    #4 \\
-}
-    % END RESUME DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+	
+	%----------HEADING-----------------
+	\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+		\textbf{\href{}{\Large Qi Zheng}} & Email : \href{charlie_zheng7@163.com}{charlie\_zheng7@163.com}\\
+		\href{}{} & Mobile : +86-13918538629 \\
+	\end{tabular*}
+	
+	
+	%-----------EDUCATION-----------------
+	\section{Education}
+	\resumeSubHeadingListStart
+	\resumeSubheading
+	{East China Normal University}{Shanghai, China}
+	{B.S. in Computer Science}{Sep. 2014 -- Jun. 2018}
+	\resumeSubHeadingListEnd
+	
+	
+	%-----------EXPERIENCE-----------------
+	\section{Experience}
+	\resumeSubHeadingListStart
+	
+	\resumeSubheading
+	{Hypereal}{Shanghai, China}
+	{Software Engineer Intern}{Jul 2017 - Oct 2017}
 
-    \begin{document}
+	~\\
+	{Working on server back-end. Responsibility includes new feature implementation, RESTful Api design, bug-fix, etc.}
 
-\vspace*{-40pt}
+	
+	\resumeSubheading
+	{ECNU NLP Group}{Shanghai, China}
+	{Research Assistant}{Jan 2017 - present}
+	\resumeItemListStart
+	~\\
+	{working on various project}
+	\resumeItemListEnd
+	
+	
 
-%==== Profile ====%
-\vspace*{-10pt}
-\begin{center}
-	{\Huge \scshape {Qi Zheng}}\\
-	Shanghai China $\cdot$ charlie\_zheng7@163.com $\cdot$ 86-13918538629\\
-\end{center}
-
-\vspace*{2mm}
-
-%==== Education ====%
-\header{Education}
-\textbf{East China Normal University}\hfill Shanghai China\\
-Bachelor Degree Computer Science \hfill Grad: June 2018\\
-\vspace{2mm}
-
-\vspace*{2mm}
-
-%==== Experience ====%
-\header{Experience}
-\vspace{1mm}
-
-\textbf{Hypereal}\\
-\textit{Software Engineer Intern} \hfill July 2017 | September 2017\\
-\vspace{-1mm}
-\begin{itemize} \itemsep 1pt
-	\item Working on server back-end
-\end{itemize}
-
-\header{Skills}
-\begin{tabular}{ l l }
-	Programming Language: & C++, Java, Python, Javascript                \\
-	Computer Graphics:    & OpenGL, real time physically-based rendering \\
-\end{tabular}
-
-\vspace*{2mm}
-
-\header{Projects}
-{\textbf{SAMPLE} \sl BBB} \hfill CCC\\
-AAA\\
-\vspace*{2mm}
-
-\vspace*{2mm}
-
-\header{Awards}
-\textbf{2017 China College IoT Contest}\\
-Second Prize of East-China Region\\
-\vspace*{2mm}
-
-\ 
+	
+	\resumeSubHeadingListEnd
+	
+	
+	%-----------PROJECTS-----------------
+	\section{Projects}
+	\resumeSubHeadingListStart
+	\resumeSubItem{LOGL}
+	{A rendering demo written in OpenGL. Implement various modern rendering features including defered shading, physically based shading and so on.}
+	\resumeSubItem{Github Visualization}
+	{Data Visualization of Git Log data using D3 to analyze project trends over time.}
+	\resumeSubItem{Recommendation System}
+	{Music and Movie recommender systems using collaborative filtering on public datasets.}
+	\resumeSubItem{Mac Setup}
+	{Book that gives step by step instructions on setting up developer environment on Mac OS.}
+	\resumeSubHeadingListEnd
+	
+	\section{Skills}
+	\resumeSubHeadingListStart
+	\resumeSubItem{LOGL}
+	{A rendering demo written in OpenGL. Implement various modern rendering features including defered shading, physically based shading and so on.}
+	\resumeSubItem{Github Visualization}
+	{Data Visualization of Git Log data using D3 to analyze project trends over time.}
+	\resumeSubItem{Recommendation System}
+	{Music and Movie recommender systems using collaborative filtering on public datasets.}
+	\resumeSubItem{Mac Setup}
+	{Book that gives step by step instructions on setting up developer environment on Mac OS.}
+	\resumeSubHeadingListEnd
+	
+	%
+	%--------PROGRAMMING SKILLS------------
+	%\section{Programming Skills}
+	%  \resumeSubHeadingListStart
+	%    \item{
+	%      \textbf{Languages}{: Scala, Python, Javascript, C++, SQL, Java}
+	%      \hfill
+	%      \textbf{Technologies}{: AWS, Play, React, Kafka, GCE}
+	%    }
+	%  \resumeSubHeadingListEnd
+	
+	
+	%-------------------------------------------
 \end{document}
